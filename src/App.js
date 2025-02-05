@@ -85,7 +85,8 @@ function App() {
       <h1>Menu</h1>
       <div className="menu">
         {/* Display menu items dynamicaly here by iterating over the provided menuItems */}
-        <MenuItem title={menuItems[0].title} /> {/* Example for how to use a component */}
+        <MenuItem title={menuItems[0].title} description={menuItems[0].description} imagename={menuItems[0].imageName}/> {/* Example for how to use a component */}
+        <MenuItem title={menuItems[1].title} description={menuItems[1].description} imagename={menuItems[1].imageName}/> {/* Example for how to use a component */}
       </div>
     </div>
   );
