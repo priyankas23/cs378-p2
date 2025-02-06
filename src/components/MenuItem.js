@@ -9,9 +9,13 @@ import React from 'react';
 const MenuItem = ({title, description, imagename}) => {
     return (
         <div>
+            <div class = "menu-image-column">             
+                <img src= {(process.env.PUBLIC_URL+"/images/"+imagename)}></img>
+            </div>
+             <div class = "menu-image-column">   
             <h2>{title}</h2>
             <h3>{description}</h3>
-            <img src= {(process.env.PUBLIC_URL+"/images/"+imagename)}></img>
+            </div>
         </div>
     );
 };
