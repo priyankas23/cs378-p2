@@ -1,15 +1,16 @@
 .menuContainer{
-    color:green;
+ padding: 5px;
   }
 
 .Column{
     display: float;
 }
 .menuimage{
-
+    padding: 5 px;
 }
 
 .menuimage img{
     width: 100%;
-    
+    border-radius: 25%;
+    max-height: 100%;
 }

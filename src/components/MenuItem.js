@@ -15,13 +15,13 @@ const MenuItem = ({title, description, imagename}) => {
             <div className = 'menuContainer'>
             <Container> 
                 <Row>
-                <Col xs={4} sm ={4} md= {4}>
+                <Col xs={5} sm ={5} md= {5}>
                     <div className = 'menuimage'>
-                     <img src= {(process.env.PUBLIC_URL+"/images/"+imagename)}></img>
+                    <img src={`/images/${imagename}`} />                    
                     </div>
                 </Col>
-                <Col xs={8} sm={8} md ={8}>
-                    <h> hi </h>
+                <Col xs={7} sm={7} md ={7}>
+                    <h1>{title}</h1>
                 </Col>
                 </Row>
             </Container>
