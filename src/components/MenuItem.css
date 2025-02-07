@@ -1,3 +1,15 @@
 .menuContainer{
     color:green;
   }
+
+.Column{
+    display: float;
+}
+.menuimage{
+
+}
+
+.menuimage img{
+    width: 100%;
+    
+}

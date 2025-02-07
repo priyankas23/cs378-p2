@@ -2,6 +2,8 @@ import React from 'react';
 import './MenuItem.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 // This is a functional component that represents a single menu item. It currently takes in the title and displays it in an h2 element.
 // Modify the component to take in all the other properties of a menu item you need and display them in the component.
@@ -12,7 +14,16 @@ const MenuItem = ({title, description, imagename}) => {
         <div>
             <div className = 'menuContainer'>
             <Container> 
-                <h1> Yo </h1>
+                <Row>
+                <Col xs={4} sm ={4} md= {4}>
+                    <div className = 'menuimage'>
+                     <img src= {(process.env.PUBLIC_URL+"/images/"+imagename)}></img>
+                    </div>
+                </Col>
+                <Col xs={8} sm={8} md ={8}>
+                    <h> hi </h>
+                </Col>
+                </Row>
             </Container>
             </div>
         </div>
