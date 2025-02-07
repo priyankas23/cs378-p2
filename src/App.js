@@ -91,6 +91,10 @@ export const HeaderItems = ({title, description, logo}) => {
         <div className = "headerimg">
         <img src= {(process.env.PUBLIC_URL+"/images/"+logo)}></img>
         </div>
+        <div className = "textheader">
+          <h4>{description}</h4>
+          <h2>{title}</h2>
+        </div>
       </Col>
       </Container>
   )

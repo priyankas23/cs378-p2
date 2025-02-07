@@ -27,3 +27,21 @@
   max-width: 100%;
   align-items: center;
 }
+
+.textheader{
+  text-align: center;
+}
+
+.textheader h4{
+  color: rgb(115, 192, 255);
+  font-size: 15px;
+  font-family: cursive;
+  font-weight:bold;
+}
+
+.textheader h2{
+  color: darkgrey;
+  font-size: 25px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+}
