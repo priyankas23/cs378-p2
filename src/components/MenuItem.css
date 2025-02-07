@@ -6,11 +6,35 @@
     display: float;
 }
 .menuimage{
-    padding: 5 px;
+    padding: 5px;
+
 }
 
 .menuimage img{
     width: 100%;
     border-radius: 25%;
     max-height: 100%;
+}
+
+.titledesc{
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.titledesc h5{
+    font-style: bold;
+    color: rgb(115, 192, 255);
+}
+
+.price{
+    display: inline;
+}
+
+.price Button{
+    display: inline;
+    justify-content: right;
+    border-radius: 50%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    float: right;
 }
