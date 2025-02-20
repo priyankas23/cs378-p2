@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import MenuItem from './components/MenuItem';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -100,9 +101,17 @@ export const HeaderItems = ({title, description, logo}) => {
   )
 }
 
+export const SubTotalComponent = ({subTotal}) =>{
+  return(
+    <Container fluid>
+      <p>Subtotal: ${subTotal}</p>
+    </Container>
+  )
+}
 
 
 function App() {
+  const [subTotal, setSubTotal] = useState(0);
   return (
     <div>
       <div className ="header">
@@ -115,12 +124,13 @@ function App() {
             description={item.description}
             price={item.price}
             imagename={item.imageName}
+            stateChanger = {setSubTotal}
           />
         ))
         }
       </div>
       <div className = 'subTotalAndOrder'>
-        
+        <SubTotalComponent subTotal={subTotal}></SubTotalComponent>
 
       </div>
     </div>

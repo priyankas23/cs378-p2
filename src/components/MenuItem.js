@@ -12,7 +12,7 @@ import Button from 'react-bootstrap/Button';
 // Modify the component to take in all the other properties of a menu item you need and display them in the component.
 // Use bootstrap to style the elements so that it looks like the mockup in the assignment.
 // Hint: You can use the image name to get the image from the images folder.
-const MenuItem = ({title, description, imagename, price}) => {
+const MenuItem = ({title, description, imagename, price, stateChanger}) => {
     const [itemCount, setCount] = useState(0);
     return (
         <div>
@@ -33,9 +33,9 @@ const MenuItem = ({title, description, imagename, price}) => {
                     <div className = 'price'>
                        <p> ${price}  
                         <div>
-                         <Button variant="outline-info" bsSize ="xsmall" onClick={() => setCount(Math.max (itemCount - 1, 0) )}>-</Button>
+                         <Button variant="outline-info" bsSize ="xsmall" onClick={() => setCount(itemCount + 1)}>+</Button>
                          <span className = 'itemCount'>{itemCount}</span>
-                        <Button variant="outline-info" bsSize ="xsmall" onClick={() => setCount(itemCount + 1)}>+</Button>
+                         <Button variant="outline-info" bsSize ="xsmall" onClick={() => setCount(Math.max (itemCount - 1, 0) )}>-</Button>
                         </div>
                       </p>
                     </div>
