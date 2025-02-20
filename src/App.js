@@ -100,6 +100,8 @@ export const HeaderItems = ({title, description, logo}) => {
   )
 }
 
+
+
 function App() {
   return (
     <div>
@@ -116,6 +118,10 @@ function App() {
           />
         ))
         }
+      </div>
+      <div className = 'subTotalAndOrder'>
+        
+
       </div>
     </div>
   );

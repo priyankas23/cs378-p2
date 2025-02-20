@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import './MenuItem.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -12,6 +13,7 @@ import Button from 'react-bootstrap/Button';
 // Use bootstrap to style the elements so that it looks like the mockup in the assignment.
 // Hint: You can use the image name to get the image from the images folder.
 const MenuItem = ({title, description, imagename, price}) => {
+    const [itemCount, setCount] = useState(0);
     return (
         <div>
             <div className = 'menuContainer'>
@@ -19,7 +21,7 @@ const MenuItem = ({title, description, imagename, price}) => {
                 <Row>
                 <Col xs={5} sm ={5} md= {5}>
                     <div className = 'menuimage'>
-                    <img src={`/images/${imagename}`} />                    
+                    <img src={process.env.PUBLIC_URL + '/images/'+ imagename} alt = {title}/>
                     </div>
                 </Col>
                 <Col xs={7} sm={7} md ={7}>
@@ -29,8 +31,13 @@ const MenuItem = ({title, description, imagename, price}) => {
                 </div>
                     
                     <div className = 'price'>
-                        <p>${price}  <Button variant="outline-info" size ="small">Add</Button> </p>
-                       
+                       <p> ${price}  
+                        <div>
+                         <Button variant="outline-info" bsSize ="xsmall" onClick={() => setCount(Math.max (itemCount - 1, 0) )}>-</Button>
+                         <span className = 'itemCount'>{itemCount}</span>
+                        <Button variant="outline-info" bsSize ="xsmall" onClick={() => setCount(itemCount + 1)}>+</Button>
+                        </div>
+                      </p>
                     </div>
                 </Col>
                 </Row>
