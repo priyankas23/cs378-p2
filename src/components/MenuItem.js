@@ -34,19 +34,7 @@ const MenuItem = ({id, title, description, imagename, price, itemCt, setItemCt, 
                         <Col className = 'pricetag'> 
                         ${price}  
                         </Col>
-                        <Col className = 'addButton'>
-                         <Button variant="outline-info" className = "small-button" onClick={() => {
-                            setItemCt(itemCt => {
-                                const newItemCt = [...itemCt]; 
-                                newItemCt[id - 1] += 1; 
-                                return newItemCt;});
-                            setSubTotal(Math.round((subTotal + price) * 100)/ 100);
-                         }}>+</Button>
-                         </Col>
-                         <Col className = 'itemCount'>
-                         {itemCt[id-1]}
-                         </Col> 
-                         <Col className = 'subButton'>
+                        <Col className = 'subButton'>
                          <Button variant="outline-info" className = "small-button" onClick={() =>{
                             setItemCt(itemCt => {
                                 const newItemCt = [...itemCt]; 
@@ -55,6 +43,18 @@ const MenuItem = ({id, title, description, imagename, price, itemCt, setItemCt, 
                             setSubTotal(Math.round(Math.max(subTotal-price, 0)*100)/100);
                          }}>-</Button>
                         </Col>
+                         <Col className = 'itemCount'>
+                         {itemCt[id-1]}
+                         </Col> 
+                         <Col className = 'addButton'>
+                         <Button variant="outline-info" className = "small-button" onClick={() => {
+                            setItemCt(itemCt => {
+                                const newItemCt = [...itemCt]; 
+                                newItemCt[id - 1] += 1; 
+                                return newItemCt;});
+                            setSubTotal(Math.round((subTotal + price) * 100)/ 100);
+                         }}>+</Button>
+                         </Col>
                         </Row>
                     </div>
                 </Col>
