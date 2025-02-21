@@ -50,7 +50,7 @@ const MenuItem = ({id, title, description, imagename, price, itemCt, setItemCt, 
                          <Button variant="outline-info" className = "small-button" onClick={() =>{
                             setItemCt(itemCt => {
                                 const newItemCt = [...itemCt]; 
-                                newItemCt[id - 1] = Math.max(newItemCt[id-1], 0); 
+                                newItemCt[id - 1] = Math.max(newItemCt[id-1] -1, 0); 
                                 return newItemCt;});                             
                             setSubTotal(Math.round(Math.max(subTotal-price, 0)*100)/100);
                          }}>-</Button>

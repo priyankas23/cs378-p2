@@ -50,4 +50,12 @@
 
 .subTotalAndOrder{
   display: float; 
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.subTotalAndOrder Button{
+  float: right;
+  padding: 5px;
+  margin: 5px;
+}
+

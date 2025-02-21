@@ -50,14 +50,15 @@
 
 .subButton{
     margin: 0px;
+    display: inline;
+    float: right;
 }
 
 .price Button{
     display: inline;
-    justify-content: right;
     border-radius: 50%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-size: 10px;
     float: right;
 }
 
@@ -66,12 +67,4 @@
     padding-left: 10px;
     padding-top: 5px;
     display:inline;
-}
-.small-button{
-  font-size: 8px;  
-  min-width: 30px;    
-  height: auto; 
-  justify-content: center;
-  text-align: center;
-  display: inline;
 }

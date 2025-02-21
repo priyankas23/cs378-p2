@@ -1,8 +1,10 @@
 import './App.css';
 import { useState } from 'react';
 import MenuItem from './components/MenuItem';
+import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css'; // This imports bootstrap css styles. You can use bootstrap or your own classes by using the className attribute in your elements.
 
 const headerInfo = {
@@ -101,20 +103,40 @@ export const HeaderItems = ({title, description, logo}) => {
   )
 }
 
-export const SubTotalComponent = ({subTotal}) =>{
+export const SubTotalComponent = ({subTotal, setSubTotal, setItemCt, itemCt}) =>{
   return(
     <Container fluid>
-      <p>Subtotal: ${subTotal}</p>
+      <p>Subtotal: ${subTotal} <Button variant = "outline-info" onClick = {()=> {
+        let order = "";
+        itemCt.forEach((element, index) => {
+          if (element !== 0) {
+            order += `${element} ` + menuItems[index].title + "\n";
+          }
+        });
+        if (order === "") {
+          order = "No items added to cart yet. Cannot place an order.";
+        } else {
+          order = "Order placed! \n" + order;
+        }
+        alert(order)}}>Order</Button> 
+      <Button variant="outline-info" onClick ={() => {
+                            setItemCt([0,0,0,0,0,0,0,0,0,0]);
+                            setSubTotal(0);
+                         }}>Clear All</Button></p>
     </Container>
   )
 }
+
+
 
 
 function App() {
   const [itemCt, setItemCt] = useState([0,0,0,0,0,0,0,0,0,0])
   const [subTotal, setSubTotal] = useState(0);
   return (
-    <div>
+   
+
+    <div className = "screen">
       <div className ="header">
         <HeaderItems title={headerInfo.title} description={headerInfo.description} logo = {headerInfo.logo}/>
       </div>
@@ -135,8 +157,7 @@ function App() {
         }
       </div>
       <div className = 'subTotalAndOrder'>
-        <SubTotalComponent subTotal={subTotal}></SubTotalComponent>
-
+        <SubTotalComponent subTotal={subTotal} setSubTotal={setSubTotal}  setItemCt = {setItemCt} itemCt = {itemCt}></SubTotalComponent>
       </div>
     </div>
   );
