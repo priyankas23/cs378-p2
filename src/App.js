@@ -111,6 +111,7 @@ export const SubTotalComponent = ({subTotal}) =>{
 
 
 function App() {
+  const [itemCt, setItemCt] = useState([0,0,0,0,0,0,0,0,0,0])
   const [subTotal, setSubTotal] = useState(0);
   return (
     <div>
@@ -120,11 +121,15 @@ function App() {
       <div className="menu">
       {menuItems.map(item => (
           <MenuItem
+            id = {item.id}
             title={item.title}
             description={item.description}
             price={item.price}
             imagename={item.imageName}
-            stateChanger = {setSubTotal}
+            itemCt = {itemCt}
+            setItemCt={setItemCt}
+            subTotal = {subTotal}
+            setSubTotal = {setSubTotal}
           />
         ))
         }

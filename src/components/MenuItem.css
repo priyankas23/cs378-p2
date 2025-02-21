@@ -28,15 +28,28 @@
 
 .price{
     display: inline;
+    align-items: center;
+}
+.prices{
+    display: inline;
+    align-items: center;
+    padding: 0px;
+}
+
+.addButton{
+    margin: 0px;
 }
 
 .itemCount{
     display: inline;
-    justify-content: right;
-    border-radius: 50%;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 15px;
-    float: right;
+    margin: 0px;
+    padding: 0px;
+}
+
+.subButton{
+    margin: 0px;
 }
 
 .price Button{
@@ -52,4 +65,13 @@
     padding-right: 10px;
     padding-left: 10px;
     padding-top: 5px;
+    display:inline;
+}
+.small-button{
+  font-size: 8px;  
+  min-width: 30px;    
+  height: auto; 
+  justify-content: center;
+  text-align: center;
+  display: inline;
 }
